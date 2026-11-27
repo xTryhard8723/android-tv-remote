@@ -28,7 +28,7 @@ The sideloaded app is shipped as `ShieldRemote.apk` (package `dev.krist.shieldre
 - **Multiple devices**: automatic discovery on the local network and per-device pairing
 - Dark Material 3 design
 
-> **Voice search** is included but experimental. Audio is streamed, but the TV's Assistant doesn't currently recognise it.
+> **Voice input** is not working yet — we're working on it, and for now it has been removed from the UI.
 
 ## Supported devices
 
