@@ -47,10 +47,10 @@ class PairingSecretTest {
 
     @Test fun selfSignedCertificateIsValidAndUsable() {
         val kp = SelfSignedCert.generateKeyPair()
-        val cert = SelfSignedCert.create(kp, "ShieldRemote Test")
+        val cert = SelfSignedCert.create(kp, "Android TV Remote Test")
         cert.checkValidity()
         cert.verify(kp.public)
-        assertTrue(cert.subjectX500Principal.name.contains("ShieldRemote Test"))
+        assertTrue(cert.subjectX500Principal.name.contains("Android TV Remote Test"))
         val pub = cert.publicKey as RSAPublicKey
         assertEquals(2048, pub.modulus.bitLength())
         assertEquals(BigInteger.valueOf(65537), pub.publicExponent)

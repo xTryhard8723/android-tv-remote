@@ -62,7 +62,7 @@ object Launch {
                 c.isEmpty() && s.packageName.isNotBlank() -> "No deep link: tap to record a key sequence"
                 c.isEmpty() -> "Not set"
                 working != null && working == c.first() -> "Works via ${c.first()}"
-                c.first().startsWith("market://") -> "Play Store link (needs AVA Connect on the Shield)"
+                c.first().startsWith("market://") -> "Play Store link (needs AVA Connect on the TV)"
                 else -> "Deep link ${c.first()}"
             }
         }
@@ -226,12 +226,12 @@ class Prefs(context: Context) {
 
     /** Settings + shortcuts as a JSON document (export / import). */
     fun exportJson(): String = JSONObject()
-        .put("app", "ShieldRemote").put("format", 1)
+        .put("app", "AndroidTVRemote").put("format", 1)
         .put("settings", settings.toJson())
         .put("shortcuts", JSONArray().also { a -> shortcuts.forEach { a.put(JSONObject().put("name", it.name).put("link", it.link).put("color", it.color).put("pkg", it.pkg).put("keys", it.keys).put("icon", it.icon)) } })
         .toString(2)
 
-    /** Returns the imported settings, or null if the document isn't a ShieldRemote export. */
+    /** Returns the imported settings, or null if the document isn't an Android TV Remote export. */
     fun importJson(text: String): Settings? = runCatching {
         val o = JSONObject(text)
         val st = Settings.fromJson(o.getJSONObject("settings"))

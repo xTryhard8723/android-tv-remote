@@ -320,7 +320,7 @@ class RemoteController(private val context: Context) {
                 session = null; sessionNetwork = null
                 voiceStop = true
                 if (gotConfigure) { authFails = 0; attempt = 1 } else { authFails++; attempt++ }
-                if (authFails >= 3) { requirePairing("The Shield closed the connection. Pair again."); authFails = 0; attempt = 0; continue }
+                if (authFails >= 3) { requirePairing("The TV closed the connection. Pair again."); authFails = 0; attempt = 0; continue }
                 if (!wanted.value || deviceFlow.value?.id != dev.id) { attempt = 0; continue }
                 setLink(Link.RECONNECTING, reason)
             } else {
@@ -328,7 +328,7 @@ class RemoteController(private val context: Context) {
                 val timeout = e is HandshakeFailed && e.cause is SocketTimeoutException
                 if (e is HandshakeFailed && !timeout) {
                     authFails++
-                    if (authFails >= 3) { requirePairing("The Shield doesn't recognise this phone. Pair again."); authFails = 0; attempt = 0; continue }
+                    if (authFails >= 3) { requirePairing("The TV doesn't recognise this phone. Pair again."); authFails = 0; attempt = 0; continue }
                 } else {
                     netFails++
                     if (netFails % 3 == 0) scope.launch { rediscover(dev) }
@@ -429,7 +429,7 @@ class RemoteController(private val context: Context) {
         val list = Launch.candidates(sc, pkg.takeIf { it.isNotBlank() }?.let { prefs.launchMethod(it) }, if (test) emptySet() else prefs.rejectedLinks).toMutableList()
         if (list.isEmpty()) {
             trace("✗ ${sc.name}: no usable link, nothing sent")
-            _events.tryEmit(UiEvent.Toast("${sc.name} can't be opened by a link on the Shield. Record it once: in the editor tap HOME, then the arrows to reach ${sc.name}, then OK, and Save."))
+            _events.tryEmit(UiEvent.Toast("${sc.name} can't be opened by a link on the TV. Record it once: in the editor tap HOME, then the arrows to reach ${sc.name}, then OK, and Save."))
             if (!test) _events.tryEmit(UiEvent.EditShortcut(sc))
             return
         }
@@ -437,7 +437,7 @@ class RemoteController(private val context: Context) {
         launchJob = scope.launch {
             var errors = 0
             for ((i, uri) in list.withIndex()) {
-                if (!awaitConnected(8_000)) { _events.tryEmit(UiEvent.Toast("Not connected to the Shield")); return@launch }
+                if (!awaitConnected(8_000)) { _events.tryEmit(UiEvent.Toast("Not connected to the TV")); return@launch }
                 val opened = CompletableDeferred<Unit>()
                 val failed = CompletableDeferred<Unit>()
                 if (pkg.isNotBlank()) appWaiter = pkg to opened
@@ -463,8 +463,8 @@ class RemoteController(private val context: Context) {
                 }
             }
             if (errors > 0) {
-                val hint = if (list.any { it.startsWith("market://") }) " The Play Store no longer opens apps for remotes; install \"AVA Connect\" on the Shield to fix package launches, add the app's deep link, or use a key sequence." else ""
-                _events.tryEmit(UiEvent.Toast("The Shield couldn't open ${sc.name}${if (pkg.isNotBlank()) " ($pkg)" else ""}.$hint"))
+                val hint = if (list.any { it.startsWith("market://") }) " The Play Store no longer opens apps for remotes; install \"AVA Connect\" on the TV to fix package launches, add the app's deep link, or use a key sequence." else ""
+                _events.tryEmit(UiEvent.Toast("The TV couldn't open ${sc.name}${if (pkg.isNotBlank()) " ($pkg)" else ""}.$hint"))
             }
         }
     }
@@ -805,7 +805,7 @@ class RemoteController(private val context: Context) {
         val client = PairingClient(certs, host, PAIRING_PORT)
         pairing = client
         try {
-            client.start("Shield Remote (${Build.MODEL})", wifi?.socketFactory)
+            client.start("Android TV Remote (${Build.MODEL})", wifi?.socketFactory)
             client.serverName
         } catch (e: Exception) {
             cancelPairingInternal()

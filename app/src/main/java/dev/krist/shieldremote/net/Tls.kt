@@ -35,7 +35,7 @@ class CertStore(private val context: Context) {
             }
         }
         val kp = SelfSignedCert.generateKeyPair()
-        val cert = SelfSignedCert.create(kp, "ShieldRemote ${Build.MODEL}")
+        val cert = SelfSignedCert.create(kp, "Android TV Remote ${Build.MODEL}")
         ks.load(null, null)
         ks.setKeyEntry("client", kp.private, pw, arrayOf(cert))
         val tmp = File(file.path + ".tmp")

@@ -136,26 +136,26 @@ fun PairingContent(
         ) {
             Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(top = 8.dp)) {
                 if (canGoBack || stage >= 2) IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Rounded.ArrowBack, "Back", tint = Palette.Text) }
-                Text(if (stage >= 2) "Enter the code" else "Connect your Shield", style = MaterialTheme.typography.titleLarge, color = Palette.Text)
+                Text(if (stage >= 2) "Enter the code" else "Connect your TV", style = MaterialTheme.typography.titleLarge, color = Palette.Text)
             }
             Spacer(Modifier.height(10.dp))
             AnimatedContent(stage >= 2, label = "stage") { codeStage ->
                 if (!codeStage) Column {
-                    Text("Make sure your phone and the Shield are on the same Wi-Fi network.", color = Palette.TextDim, style = MaterialTheme.typography.bodyMedium)
+                    Text("Make sure your phone and the TV are on the same Wi-Fi network.", color = Palette.TextDim, style = MaterialTheme.typography.bodyMedium)
                     Spacer(Modifier.height(20.dp))
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text("Found on your network", style = MaterialTheme.typography.titleMedium, color = Palette.Text, modifier = Modifier.weight(1f))
                         CircularProgressIndicator(Modifier.size(18.dp), strokeWidth = 2.dp, color = Palette.Accent)
                     }
                     Spacer(Modifier.height(12.dp))
-                    if (found.isEmpty()) Text("Searching… (Shield must be switched on)", color = Palette.TextDim, style = MaterialTheme.typography.bodySmall)
+                    if (found.isEmpty()) Text("Searching… (the TV must be switched on)", color = Palette.TextDim, style = MaterialTheme.typography.bodySmall)
                     found.forEach { tv ->
                         DeviceCard(tv.serviceName, tv.host, busy = stage == 1 && targetHost == tv.host) { onPick(tv) }
                         Spacer(Modifier.height(10.dp))
                     }
                     Spacer(Modifier.height(24.dp))
-                    Text("Or enter the Shield's IP address", style = MaterialTheme.typography.titleMedium, color = Palette.Text)
-                    Text("Shield: Settings → Device Preferences → About → Status", color = Palette.TextDim, style = MaterialTheme.typography.bodySmall)
+                    Text("Or enter the TV's IP address", style = MaterialTheme.typography.titleMedium, color = Palette.Text)
+                    Text("On the TV: Settings → Device Preferences or System → About → Status", color = Palette.TextDim, style = MaterialTheme.typography.bodySmall)
                     Spacer(Modifier.height(10.dp))
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         OutlinedTextField(
@@ -169,7 +169,7 @@ fun PairingContent(
                         Button(onClick = { val h = manualIp.trim(); if (h.isNotEmpty()) onManual(h) }, enabled = stage == 0 && manualIp.isNotBlank()) { Text("Connect") }
                     }
                 } else Column {
-                    Text("A code is now shown on your TV for ${targetName ?: "the Shield"}. Type it below.", color = Palette.TextDim, style = MaterialTheme.typography.bodyMedium)
+                    Text("A code is now shown on your TV for ${targetName ?: "the TV"}. Type it below.", color = Palette.TextDim, style = MaterialTheme.typography.bodyMedium)
                     Spacer(Modifier.height(24.dp))
                     CodeEntry(enabled = stage == 2, onComplete = onCode)
                     if (stage == 3) Row(Modifier.padding(top = 18.dp), verticalAlignment = Alignment.CenterVertically) {

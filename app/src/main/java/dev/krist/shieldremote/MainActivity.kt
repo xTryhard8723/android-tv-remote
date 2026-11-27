@@ -98,7 +98,7 @@ class MainActivity : ComponentActivity() {
                         val text = runCatching { contentResolver.openInputStream(uri)!!.use { it.readBytes().decodeToString() } }.getOrNull()
                         val ok = text != null && controller.importSettings(text)
                         if (ok) shortcutsVersion++
-                        Toast.makeText(this, if (ok) "Settings imported" else "That file isn't a Shield Remote export", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, if (ok) "Settings imported" else "That file isn't an Android TV Remote export", Toast.LENGTH_SHORT).show()
                     }
                 }
                 var pairing by remember { mutableStateOf(false) }
@@ -219,7 +219,7 @@ class MainActivity : ComponentActivity() {
                             override fun playLastVoice() {
                                 if (!controller.playLastVoice()) Toast.makeText(this@MainActivity, "No voice search recorded yet", Toast.LENGTH_SHORT).show()
                             }
-                            override fun exportSettings() { exportLauncher.launch("shield-remote-settings.json") }
+                            override fun exportSettings() { exportLauncher.launch("android-tv-remote-settings.json") }
                             override fun importSettings() { importLauncher.launch(arrayOf("application/json", "text/plain", "*/*")) }
                             override fun resetSettings() { controller.resetSettings(); Toast.makeText(this@MainActivity, "Settings reset", Toast.LENGTH_SHORT).show() }
                         })

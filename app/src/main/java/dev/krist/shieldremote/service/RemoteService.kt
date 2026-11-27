@@ -139,7 +139,7 @@ class RemoteService : Service() {
         val cfg = controller.settings.value
         val b = NotificationCompat.Builder(this, CHANNEL)
             .setSmallIcon(R.drawable.ic_stat_remote)
-            .setContentTitle(st.device?.name ?: "Shield Remote")
+            .setContentTitle(st.device?.name ?: "Android TV Remote")
             .setContentText(status + volumeSuffix(st.volume) + if (cfg.notifRemote) " · expand for remote" else "")
             .setContentIntent(open)
             .setOngoing(true)

@@ -319,7 +319,7 @@ private fun Header(state: RemoteState, touchpad: Boolean, actions: RemoteActions
                         StatusDot(state, Modifier.align(Alignment.TopEnd).offset(x = 6.dp, y = (-5).dp))
                     }
                     Spacer(Modifier.width(12.dp))
-                    Text(state.device?.name ?: "Shield", style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold), color = dark, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                    Text(state.device?.name ?: "TV", style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold), color = dark, maxLines = 1, overflow = TextOverflow.Ellipsis)
                 }
                 Spacer(Modifier.width(2.dp))
                 Box(Modifier.background(Palette.Accent).clickable { actions.openDevices() }.padding(horizontal = 12.dp, vertical = 12.dp)) {

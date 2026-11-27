@@ -178,7 +178,7 @@ fun SettingsScreen(s: Settings, devices: List<SavedDevice>, tvModel: String, ver
                 NavItem("Export settings", "Save settings and shortcuts to a file", a::exportSettings)
                 NavItem("Import settings", "Load a previously exported file", a::importSettings)
                 NavItem("Reset to defaults", "Settings only; pairings and shortcuts stay", { confirmReset = true }, danger = true)
-                Item("About", "Shield Remote $version" + if (tvModel.isNotBlank()) "\nConnected to $tvModel" else "") {}
+                Item("About", "Android TV Remote $version" + if (tvModel.isNotBlank()) "\nConnected to $tvModel" else "") {}
             }
         }
     }

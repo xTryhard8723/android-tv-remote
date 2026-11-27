@@ -96,7 +96,7 @@ fun MoreKeysSheet(sink: KeySink, onDismiss: () -> Unit, inSheet: Boolean = true)
         }
         Spacer(Modifier.height(10.dp))
     }
-    Text("Sleep puts the Shield to sleep; Power or Wake turns it back on.", color = Palette.TextDim, style = MaterialTheme.typography.bodySmall)
+    Text("Sleep puts the TV to sleep; Power or Wake turns it back on.", color = Palette.TextDim, style = MaterialTheme.typography.bodySmall)
 }
 
 @Composable
@@ -285,7 +285,7 @@ fun ShortcutsSheet(
                                     }.padding(horizontal = 12.dp, vertical = 8.dp))
                         }
                     }
-                    Text("Find a package name in Shield Settings › Apps, or in the app's Play Store URL (id=…). Apps open via their deep link; package-only launches go through the Play Store, which no longer works for most apps unless AVA Connect is installed on the Shield.", color = Palette.TextDim, style = MaterialTheme.typography.bodySmall, modifier = Modifier.padding(top = 6.dp))
+                    Text("Find a package name in the TV's Settings › Apps, or in the app's Play Store URL (id=…). Apps open via their deep link; package-only launches go through the Play Store, which no longer works for most apps unless AVA Connect is installed on the TV.", color = Palette.TextDim, style = MaterialTheme.typography.bodySmall, modifier = Modifier.padding(top = 6.dp))
                     Spacer(Modifier.height(12.dp))
                     IconPicker(Shortcut(name.ifBlank { "App" }, link, color, pkg, keys, icon), icon, onPick = { icon = it }, onGallery = { onPickImage { path -> icon = "file:$path" } })
                     Spacer(Modifier.height(8.dp))

@@ -11,7 +11,7 @@ It talks to the TV directly over the [Android TV Remote Protocol v2](https://git
   <img src="shortcut_icons_preview.png" width="45%" alt="Shortcut icon picker with original app logos" />
 </p>
 
-The sideloaded app is shipped as `ShieldRemote.apk` (package `dev.krist.shieldremote`).
+The sideloaded app is shipped as `AndroidTVRemote.apk` (package `dev.krist.shieldremote`).
 
 ## Features
 
@@ -72,7 +72,7 @@ These platforms use a different remote protocol, so they will not pair:
 
 ## Install
 
-1. Download the latest `ShieldRemote.apk` from [Releases](https://github.com/xTryhard8723/android-tv-remote/releases).
+1. Download the latest `AndroidTVRemote.apk` from [Releases](https://github.com/xTryhard8723/android-tv-remote/releases).
 2. Open it on your phone (Android 8.0 or newer) and allow installing from unknown sources.
 3. Open the app, pick your device (or enter its IP address), and type the pairing code shown on the TV.
 

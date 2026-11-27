@@ -23,13 +23,13 @@ class App : Application() {
         controller.settings.value.let { st -> dev.krist.shieldremote.ui.Haptics.init(this, st.haptics, st.sound) }
         getSystemService(NotificationManager::class.java).createNotificationChannel(
             NotificationChannel(RemoteService.CHANNEL, "Remote connection", NotificationManager.IMPORTANCE_LOW).apply {
-                description = "Keeps the Shield connection alive briefly after you leave the app"
+                description = "Keeps the TV connection alive briefly after you leave the app"
                 setShowBadge(false)
             }
         )
         getSystemService(NotificationManager::class.java).createNotificationChannel(
             NotificationChannel(ALERTS, "Connection alerts", NotificationManager.IMPORTANCE_DEFAULT).apply {
-                description = "Connection to the Shield lost or restored (Settings › Notifications)"
+                description = "Connection to the TV lost or restored (Settings › Notifications)"
             }
         )
         watchConnection()
@@ -54,7 +54,7 @@ class App : Application() {
         scope.launch {
             var lostPosted = false
             var lostJob: kotlinx.coroutines.Job? = null
-            controller.state.map { it.link to (it.device?.name ?: "Shield") }.distinctUntilChanged().collect { (link, name) ->
+            controller.state.map { it.link to (it.device?.name ?: "TV") }.distinctUntilChanged().collect { (link, name) ->
                 val nm = androidx.core.app.NotificationManagerCompat.from(this@App)
                 when (link) {
                     Link.CONNECTED -> {
