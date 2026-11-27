@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+    <FrameLayout android:id="@+id/n_custom" android:layout_width="match_parent" android:layout_height="wrap_content" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="48dp" android:orientation="horizontal">
+        <ImageButton android:id="@+id/n_back" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_btn" android:src="@drawable/ic_k_back" android:scaleType="center" android:contentDescription="n_back" />
+        <ImageButton android:id="@+id/n_up" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_btn" android:src="@drawable/ic_k_up" android:scaleType="center" android:contentDescription="n_up" />
+        <ImageButton android:id="@+id/n_home" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_btn" android:src="@drawable/ic_k_home" android:scaleType="center" android:contentDescription="n_home" />
+        <ImageButton android:id="@+id/n_play" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_btn" android:src="@drawable/ic_k_playpause" android:scaleType="center" android:contentDescription="n_play" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="48dp" android:orientation="horizontal">
+        <ImageButton android:id="@+id/n_left" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_btn" android:src="@drawable/ic_k_left" android:scaleType="center" android:contentDescription="n_left" />
+        <ImageButton android:id="@+id/n_ok" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_ok" android:src="@drawable/ic_k_ok" android:scaleType="center" android:contentDescription="n_ok" />
+        <ImageButton android:id="@+id/n_right" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_btn" android:src="@drawable/ic_k_right" android:scaleType="center" android:contentDescription="n_right" />
+        <ImageButton android:id="@+id/n_volup" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_btn" android:src="@drawable/ic_k_volup" android:scaleType="center" android:contentDescription="n_volup" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="48dp" android:orientation="horizontal">
+        <ImageButton android:id="@+id/n_mute" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_btn" android:src="@drawable/ic_k_mute" android:scaleType="center" android:contentDescription="n_mute" />
+        <ImageButton android:id="@+id/n_down" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_btn" android:src="@drawable/ic_k_down" android:scaleType="center" android:contentDescription="n_down" />
+        <ImageButton android:id="@+id/n_power" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_btn" android:src="@drawable/ic_k_power" android:scaleType="center" android:contentDescription="n_power" />
+        <ImageButton android:id="@+id/n_voldown" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_btn" android:src="@drawable/ic_k_voldown" android:scaleType="center" android:contentDescription="n_voldown" />
+    </LinearLayout>
+</LinearLayout>

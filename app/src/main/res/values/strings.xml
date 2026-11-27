@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Shield Remote</string>
+    <string name="widget_desc">D-pad, OK, Home, Back, power, play/pause and volume for your Shield</string>
+    <string name="tile_label">Shield Remote</string>
+</resources>

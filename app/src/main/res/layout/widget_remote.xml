@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:padding="8dp" android:background="@drawable/widget_bg">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+        <ImageButton android:id="@+id/w_power" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_btn" android:src="@drawable/ic_k_power" android:scaleType="center" android:contentDescription="w_power" />
+        <ImageButton android:id="@+id/w_up" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_btn" android:src="@drawable/ic_k_up" android:scaleType="center" android:contentDescription="w_up" />
+        <ImageButton android:id="@+id/w_home" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_btn" android:src="@drawable/ic_k_home" android:scaleType="center" android:contentDescription="w_home" />
+        <ImageButton android:id="@+id/w_volup" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_btn" android:src="@drawable/ic_k_volup" android:scaleType="center" android:contentDescription="w_volup" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+        <ImageButton android:id="@+id/w_left" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_btn" android:src="@drawable/ic_k_left" android:scaleType="center" android:contentDescription="w_left" />
+        <ImageButton android:id="@+id/w_ok" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_ok" android:src="@drawable/ic_k_ok" android:scaleType="center" android:contentDescription="w_ok" />
+        <ImageButton android:id="@+id/w_right" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_btn" android:src="@drawable/ic_k_right" android:scaleType="center" android:contentDescription="w_right" />
+        <ImageButton android:id="@+id/w_mute" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_btn" android:src="@drawable/ic_k_mute" android:scaleType="center" android:contentDescription="w_mute" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+        <ImageButton android:id="@+id/w_back" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_btn" android:src="@drawable/ic_k_back" android:scaleType="center" android:contentDescription="w_back" />
+        <ImageButton android:id="@+id/w_down" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_btn" android:src="@drawable/ic_k_down" android:scaleType="center" android:contentDescription="w_down" />
+        <ImageButton android:id="@+id/w_play" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_btn" android:src="@drawable/ic_k_playpause" android:scaleType="center" android:contentDescription="w_play" />
+        <ImageButton android:id="@+id/w_voldown" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="3dp" android:background="@drawable/widget_btn" android:src="@drawable/ic_k_voldown" android:scaleType="center" android:contentDescription="w_voldown" />
+    </LinearLayout>
+</LinearLayout>
