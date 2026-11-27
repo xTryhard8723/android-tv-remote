@@ -82,7 +82,7 @@ data class Settings(
         /** Accent choices: name, colour, softer variant. Google green (default) first. */
         val ACCENTS = listOf(
             Triple("Google green", 0xFF81C995, 0xFFA8DAB5),
-            Triple("NVIDIA green", 0xFF76B900, 0xFF9BE22D),
+            Triple("Lime", 0xFF76B900, 0xFF9BE22D),
             Triple("Ocean", 0xFF8AB4F8, 0xFFAECBFA),
             Triple("Violet", 0xFFA285FF, 0xFFC4B0FF),
             Triple("Ember", 0xFFFF7A1A, 0xFFFFAA66),

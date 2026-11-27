@@ -126,7 +126,7 @@ class MainActivity : ComponentActivity() {
                     val i = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
                         .putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH)
                         .putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 1)
-                        .putExtra(RecognizerIntent.EXTRA_PROMPT, "Search on ${controller.state.value.device?.name ?: "TV"}")
+                        .putExtra(RecognizerIntent.EXTRA_PROMPT, "Search on ${controller.state.value.device?.name ?: "Android TV"}")
                     controller.trace("voice(phone): opening speech recogniser (available=${android.speech.SpeechRecognizer.isRecognitionAvailable(this)})")
                     runCatching { speechLauncher.launch(i) }.onFailure {
                         controller.trace("voice(phone): ✗ no recogniser activity: ${it.javaClass.simpleName}")

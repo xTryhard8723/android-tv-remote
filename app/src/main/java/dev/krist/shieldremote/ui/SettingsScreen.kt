@@ -159,14 +159,14 @@ fun SettingsScreen(s: Settings, devices: List<SavedDevice>, tvModel: String, ver
                 SliderItem("Text size", "${(s.textScale * 100).roundToInt()} %", s.textScale, 0.85f..1.3f, 8) { v -> a.update { it.copy(textScale = (v * 20).roundToInt() / 20f) } }
             }
             Section("Voice") {
-                Item("Voice search", if (s.voiceStreaming) "Talks to the Shield's Google Assistant like the Google TV app; falls back to the phone if the Shield doesn't answer within 1.5 s" else "Recognised on the phone, typed into the open TV text box (or searched on YouTube)") {
+                Item("Voice search", if (s.voiceStreaming) "Talks to the TV's Google Assistant like the Google TV app; falls back to the phone if the TV doesn't answer within 1.5 s" else "Recognised on the phone, typed into the open TV text box (or searched on YouTube)") {
                     Chips(listOf("Stream to TV", "Phone recogniser"), if (s.voiceStreaming) 0 else 1) { i -> a.update { it.copy(voiceStreaming = i == 0) } }
                 }
                 if (s.voiceStreaming) Item("Upload", if (s.voiceLive) "Live: audio is sent while you speak" else "Buffered: sent right after you stop speaking (most reliable)") {
                     Chips(listOf("Buffered", "Live"), if (s.voiceLive) 1 else 0) { i -> a.update { it.copy(voiceLive = i == 1) } }
                 }
                 NavItem("Test microphone", "Records 3 s and plays it back, with the level", a::testMicrophone)
-                NavItem("Play last voice search", "Hear exactly what was sent to the Shield", a::playLastVoice)
+                NavItem("Play last voice search", "Hear exactly what was sent to the TV", a::playLastVoice)
             }
             Section("Shortcuts & devices") {
                 NavItem("App shortcuts", "Add, edit, test and reorder", a::manageShortcuts)

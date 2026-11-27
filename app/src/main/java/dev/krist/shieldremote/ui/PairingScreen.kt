@@ -141,21 +141,21 @@ fun PairingContent(
             Spacer(Modifier.height(10.dp))
             AnimatedContent(stage >= 2, label = "stage") { codeStage ->
                 if (!codeStage) Column {
-                    Text("Make sure your phone and the TV are on the same Wi-Fi network.", color = Palette.TextDim, style = MaterialTheme.typography.bodyMedium)
+                    Text("Make sure your phone and TV are on the same Wi-Fi network.", color = Palette.TextDim, style = MaterialTheme.typography.bodyMedium)
                     Spacer(Modifier.height(20.dp))
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text("Found on your network", style = MaterialTheme.typography.titleMedium, color = Palette.Text, modifier = Modifier.weight(1f))
                         CircularProgressIndicator(Modifier.size(18.dp), strokeWidth = 2.dp, color = Palette.Accent)
                     }
                     Spacer(Modifier.height(12.dp))
-                    if (found.isEmpty()) Text("Searching… (the TV must be switched on)", color = Palette.TextDim, style = MaterialTheme.typography.bodySmall)
+                    if (found.isEmpty()) Text("Searching… (the TV must be on)", color = Palette.TextDim, style = MaterialTheme.typography.bodySmall)
                     found.forEach { tv ->
                         DeviceCard(tv.serviceName, tv.host, busy = stage == 1 && targetHost == tv.host) { onPick(tv) }
                         Spacer(Modifier.height(10.dp))
                     }
                     Spacer(Modifier.height(24.dp))
-                    Text("Or enter the TV's IP address", style = MaterialTheme.typography.titleMedium, color = Palette.Text)
-                    Text("On the TV: Settings → Device Preferences or System → About → Status", color = Palette.TextDim, style = MaterialTheme.typography.bodySmall)
+                    Text("Or enter your TV's IP address", style = MaterialTheme.typography.titleMedium, color = Palette.Text)
+                    Text("On TV: Settings → Network & Internet (or Device Preferences → About → Status)", color = Palette.TextDim, style = MaterialTheme.typography.bodySmall)
                     Spacer(Modifier.height(10.dp))
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         OutlinedTextField(

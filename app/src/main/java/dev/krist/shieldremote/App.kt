@@ -54,7 +54,7 @@ class App : Application() {
         scope.launch {
             var lostPosted = false
             var lostJob: kotlinx.coroutines.Job? = null
-            controller.state.map { it.link to (it.device?.name ?: "TV") }.distinctUntilChanged().collect { (link, name) ->
+            controller.state.map { it.link to (it.device?.name ?: "Android TV") }.distinctUntilChanged().collect { (link, name) ->
                 val nm = androidx.core.app.NotificationManagerCompat.from(this@App)
                 when (link) {
                     Link.CONNECTED -> {

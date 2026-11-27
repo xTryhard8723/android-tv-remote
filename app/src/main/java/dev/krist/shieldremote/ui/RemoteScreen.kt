@@ -262,7 +262,7 @@ private fun ListeningOverlay(voice: Voice, actions: RemoteActions, modifier: Mod
             }
             Column(Modifier.weight(1f).padding(horizontal = 14.dp)) {
                 Text(if (voice == Voice.LISTENING) "Listening…" else "Starting voice…", color = Palette.Text, style = MaterialTheme.typography.titleMedium)
-                Text(if (voice == Voice.LISTENING) "Speak now. Stops when you pause." else "Asking the Shield's Assistant", color = Palette.TextDim, style = MaterialTheme.typography.bodySmall)
+                Text(if (voice == Voice.LISTENING) "Speak now. Stops when you pause." else "Asking the TV's Assistant", color = Palette.TextDim, style = MaterialTheme.typography.bodySmall)
             }
             Box(Modifier.clip(RoundedCornerShape(18.dp)).background(Palette.Danger.copy(alpha = 0.2f)).clickable { actions.voicePress() }.padding(horizontal = 16.dp, vertical = 10.dp)) {
                 Text("Stop", color = Palette.Danger, style = MaterialTheme.typography.labelLarge)
@@ -319,7 +319,7 @@ private fun Header(state: RemoteState, touchpad: Boolean, actions: RemoteActions
                         StatusDot(state, Modifier.align(Alignment.TopEnd).offset(x = 6.dp, y = (-5).dp))
                     }
                     Spacer(Modifier.width(12.dp))
-                    Text(state.device?.name ?: "TV", style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold), color = dark, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                    Text(state.device?.name ?: "Android TV", style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold), color = dark, maxLines = 1, overflow = TextOverflow.Ellipsis)
                 }
                 Spacer(Modifier.width(2.dp))
                 Box(Modifier.background(Palette.Accent).clickable { actions.openDevices() }.padding(horizontal = 12.dp, vertical = 12.dp)) {
